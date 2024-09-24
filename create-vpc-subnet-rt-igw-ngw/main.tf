@@ -11,13 +11,13 @@ resource "aws_vpc" "main" {
 ##################################################
 
 resource "aws_subnet" "public_subnets" {
-  count = length(var.public_subnet)
+  count = length(var.public_subnets)
   vpc_id     = aws_vpc.main.id
   cidr_block = var.public_subnets[count.index]
   availability_zone = data.aws_availability_zones.azs.names[count.index]
   map_public_ip_on_launch = true
 
   tags = {
-    Name = "public-subnet-0${[count.index]}-${data.aws_availability_zones.azs.names[count.index]}"
+    Name = "public-subnet-0${count.index+1}-${data.aws_availability_zones.azs.names[count.index]}"
   }
 }
