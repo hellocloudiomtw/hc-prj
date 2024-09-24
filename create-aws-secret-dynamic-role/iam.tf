@@ -11,7 +11,7 @@ resource "aws_iam_access_key" "vault_root" {
   user = aws_iam_user.vault_root.name
 }
 
-data "aws_iam_policy_document" "vault_root_ro" {
+data "aws_iam_policy_document" "vault_root" {
   statement {
     effect    = "Allow"
     actions   = [
@@ -32,7 +32,7 @@ data "aws_iam_policy_document" "vault_root_ro" {
         "iam:RemoveUserFromGroup"
         ]
     resources = [
-    "arn:aws:iam::3823209788473:user/vault-*"
+    "arn:aws:iam::823209788473:user/vault-*"
         ]
   }
 }
