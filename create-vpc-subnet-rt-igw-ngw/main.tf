@@ -81,7 +81,7 @@ resource "aws_route_table_association" "private" {
 resource "aws_route" "private" {
   route_table_id            = aws_route_table.private_rt.id
   destination_cidr_block    = "0.0.0.0/0"
-  nat_gateway_id = aws_internet_gateway
+  nat_gateway_id = aws_internet_gateway.id
 }
 
 resource "aws_eip" "nat" {
