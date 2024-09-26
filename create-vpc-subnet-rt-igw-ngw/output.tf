@@ -65,7 +65,7 @@ output "public_route_table_ids" {
 }
 output "public_internet_gateway_route_id" {
   description = "ID of the internet gateway route"
-  value       = aws_route.public_igw.id
+  value       = aws_route.public.id
 }
 output "public_route_table_association_ids" {
   description = "List of IDs of the public route table association"
